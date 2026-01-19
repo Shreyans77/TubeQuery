@@ -1,0 +1,15 @@
+langchain 
+langchain-core
+youtube-transcript-api
+langchain-community
+langchain-openai
+
+langchain-huggingface
+faiss-cpu
+tiktoken
+python-dotenv
+huggingface-hub
+fastapi
+uvicorn
+pydantic
+sentence-transformers

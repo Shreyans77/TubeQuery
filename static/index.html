@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TubeQuery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Tube<span class="gradient-text">Query</span></h1>
+            <p>Chat with any YouTube video in seconds.</p>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <section id="input-section" class="card fade-in">
+                <div class="input-group">
+                    <input type="text" id="video-url" placeholder="Paste YouTube URL here..." autocomplete="off">
+                    <button id="process-btn" onclick="processVideo()">
+                        <span class="btn-text">Process Video</span>
+                        <div class="loader hidden"></div>
+                    </button>
+                </div>
+                <p id="status-message" class="status"></p>
+            </section>
+
+            <!-- Chat Section (Hidden initially) -->
+            <section id="chat-section" class="card hidden">
+                <div class="chat-header">
+                    <h2>Ask Questions</h2>
+                    <button class="reset-btn" onclick="resetApp()">New Video</button>
+                </div>
+                <div id="chat-history" class="chat-history">
+                    <!-- Messages will appear here -->
+                    <div class="message bot-message">
+                        Hello! I've watched the video. Ask me anything about it.
+                    </div>
+                </div>
+                <div class="chat-input-group">
+                    <input type="text" id="user-question" placeholder="Type your question..."
+                        onkeypress="handleKeyPress(event)">
+                    <button id="send-btn" onclick="askQuestion()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
