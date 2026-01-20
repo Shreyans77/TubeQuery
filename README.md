@@ -17,6 +17,7 @@ A powerful Retrieval-Augmented Generation (RAG) application that allows you to "
 *   **Embeddings**: sentence-transformers/all-MiniLM-L6-v2
 *   **Vector Database**: FAISS (CPU)
 *   **Frontend**: HTML, CSS, JavaScript
+*   **Containerization**: Docker
 
 ## Prerequisites
 
@@ -51,8 +52,20 @@ A powerful Retrieval-Augmented Generation (RAG) application that allows you to "
     Create a `.env` file in the root directory and add your HuggingFace API token:
     ```env
     HUGGINGFACEHUB_API_TOKEN=your_token_here
-    ```
 
+## Docker Support
+You can also run the application using Docker.
+1.  **Build the Docker Image**
+    ```bash
+    docker build -t tubequery .
+    ```
+2.  **Run the Container**
+    You need to pass your HuggingFace API token as an environment variable:
+    ```bash
+    docker run -p 8000:8000 -e HUGGINGFACEHUB_API_TOKEN=your_token_here tubequery
+    ```
+3.  Access the app at `http://localhost:8000`
+    
 ## Usage
 
 1.  **Start the Server**
